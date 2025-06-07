@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,6 +20,8 @@ public class EmailGatewayImp implements EmailGateway{
 
     @Value("${app.email.to}")
     private String destinationEmail;
+
+    @Async
     @Override
     public void send(EmailRequest request) {
 
