@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+
+/home/matheus/projetinhos/email-sender/src/main/resources/application.properties
