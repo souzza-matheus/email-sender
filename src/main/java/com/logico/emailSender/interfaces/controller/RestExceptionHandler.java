@@ -13,4 +13,9 @@ public class RestExceptionHandler {
     public ResponseEntity<String> handleBusinessException(StandardErrorMessage ex) {
         return ResponseEntity.status(ex.getStatusCode()).body(ex.getMessage());
     }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleGenericException(Exception ex) {
+        return ResponseEntity.internalServerError().body("Erro interno inesperado.");
+    }
 }
